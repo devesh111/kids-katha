@@ -1,0 +1,19 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// Note: This schema is generated from the existing database using:
+// npx prisma db pull
+// npx prisma generate
+//
+// Do NOT run migrations on this database as it's managed by the admin panel.
+// To update this schema after database changes, run:
+// npx prisma db pull

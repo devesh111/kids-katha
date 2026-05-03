@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -10,10 +7,210 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// Note: This schema is generated from the existing database using:
-// npx prisma db pull
-// npx prisma generate
-//
-// Do NOT run migrations on this database as it's managed by the admin panel.
-// To update this schema after database changes, run:
-// npx prisma db pull
+model admins {
+  id         Int      @id @default(autoincrement())
+  username   String   @db.VarChar(255)
+  password   String   @db.VarChar(255)
+  created_at DateTime @default(now()) @db.Timestamp(0)
+}
+
+model audio_languages {
+  id            Int     @id @default(autoincrement())
+  language_name String? @db.VarChar(255)
+}
+
+model categories {
+  id         Int      @id @default(autoincrement())
+  name       String   @db.VarChar(255)
+  image      String?  @db.VarChar(255)
+  created_at DateTime @default(now()) @db.Timestamp(0)
+  sort_order Int?     @default(0)
+}
+
+model google_play_subscriptions {
+  id                   Int      @id @default(autoincrement())
+  user_id              Int
+  subscription_plan_id Int
+  order_id             String   @db.VarChar(100)
+  product_id           String   @db.VarChar(100)
+  purchase_token       String   @unique(map: "unique_token") @db.VarChar(255)
+  purchase_time        BigInt
+  purchase_state       Int      @db.TinyInt
+  quantity             Int?     @default(1)
+  auto_renewing        Boolean? @default(false)
+  acknowledged         Boolean? @default(false)
+  created_at           DateTime @default(now()) @db.Timestamp(0)
+  subscription_id      Int?
+
+  @@index([user_id], map: "user_id")
+}
+
+model mp3 {
+  id             Int      @id @default(autoincrement())
+  title          String   @db.VarChar(255)
+  category_id    Int
+  subcategory_id Int
+  description    String   @db.MediumText
+  image_file     String   @db.VarChar(255)
+  created_at     DateTime @default(now()) @db.Timestamp(0)
+  is_top_pick    Boolean  @default(false)
+}
+
+model mp3_languages {
+  id         Int    @id @default(autoincrement())
+  mp3_id     Int
+  language   String @db.VarChar(50)
+  audio_file String @db.VarChar(255)
+
+  @@index([mp3_id], map: "mp3_id")
+}
+
+model otp_verification {
+  id          Int                    @id @default(autoincrement())
+  email       String?                @db.VarChar(150)
+  otp         String?                @db.VarChar(6)
+  type        otp_verification_type? @default(register)
+  is_verified Int?                   @default(0) @db.TinyInt
+  created_at  DateTime               @default(now()) @db.Timestamp(0)
+}
+
+model payments {
+  id                   Int             @id @default(autoincrement())
+  user_id              Int
+  razorpay_payment_id  String?         @db.VarChar(255)
+  purchase_token       String?         @db.VarChar(255)
+  amount               Decimal         @db.Decimal(10, 2)
+  status               payments_status
+  created_at           DateTime        @default(now()) @db.Timestamp(0)
+  subscription_plan_id Int
+  subscription_id      Int?
+
+  @@index([user_id], map: "user_id")
+}
+
+model sub_accounts {
+  id             Int      @id @default(autoincrement())
+  parent_user_id Int
+  email          String   @unique(map: "email") @db.VarChar(255)
+  access_code    String   @db.VarChar(255)
+  password       String?  @db.VarChar(255)
+  device_token   String?  @unique(map: "device_token") @db.VarChar(255)
+  created_at     DateTime @default(now()) @db.Timestamp(0)
+  active         Boolean? @default(true)
+
+  @@index([parent_user_id], map: "parent_user_id")
+}
+
+model subcategories {
+  id          Int      @id @default(autoincrement())
+  category_id Int
+  name        String   @db.VarChar(255)
+  image       String?  @db.VarChar(255)
+  created_at  DateTime @default(now()) @db.Timestamp(0)
+  sort_order  Int?     @default(0)
+
+  @@index([category_id], map: "fk_sub_cat")
+}
+
+model subscription_members {
+  id              Int                          @id @default(autoincrement())
+  subscription_id Int
+  user_id         Int
+  role            subscription_members_role
+  status          subscription_members_status? @default(active)
+  joined_at       DateTime                     @default(now()) @db.Timestamp(0)
+  subscriptions   subscriptions                @relation(fields: [subscription_id], references: [id], onUpdate: Restrict, map: "subscription_members_ibfk_1")
+  users           users                        @relation(fields: [user_id], references: [id], onUpdate: Restrict, map: "subscription_members_ibfk_2")
+
+  @@unique([subscription_id, user_id], map: "subscription_id")
+  @@index([user_id], map: "user_id")
+}
+
+model subscription_plans {
+  id            Int             @id @default(autoincrement())
+  name          String          @db.VarChar(255)
+  plan_name     String?         @db.VarChar(255)
+  duration      Int?
+  price         Decimal         @db.Decimal(10, 2)
+  created_at    DateTime        @default(now()) @db.Timestamp(0)
+  subscriptions subscriptions[]
+}
+
+model subscriptions {
+  id                   Int                    @id @default(autoincrement())
+  owner_user_id        Int
+  subscription_plan_id Int
+  start_date           DateTime               @db.Date
+  end_date             DateTime               @db.Date
+  status               subscriptions_status
+  access_code          String?                @unique(map: "access_code") @db.VarChar(50)
+  created_at           DateTime               @default(now()) @db.Timestamp(0)
+  subscription_members subscription_members[]
+  users                users                  @relation(fields: [owner_user_id], references: [id], onUpdate: Restrict, map: "fk_sub_owner")
+  subscription_plans   subscription_plans     @relation(fields: [subscription_plan_id], references: [id], onUpdate: Restrict, map: "fk_sub_plan")
+
+  @@index([owner_user_id], map: "fk_sub_owner")
+  @@index([subscription_plan_id], map: "fk_sub_plan")
+}
+
+model user_devices {
+  id           Int      @id @default(autoincrement())
+  user_id      Int
+  device_token String   @unique(map: "device_token") @db.VarChar(255)
+  created_at   DateTime @default(now()) @db.Timestamp(0)
+
+  @@index([user_id], map: "user_id")
+}
+
+model users {
+  id                   Int                    @id @default(autoincrement())
+  name                 String                 @db.VarChar(255)
+  email                String                 @unique(map: "email") @db.VarChar(255)
+  password             String                 @db.VarChar(255)
+  plan                 users_plan
+  subscription_expiry  DateTime?              @db.Date
+  device_id            String?                @db.VarChar(255)
+  created_at           DateTime               @default(now()) @db.Timestamp(0)
+  subscription_plan_id Int?
+  access_code          String?                @db.VarChar(255)
+  status               users_status?          @default(free)
+  subscription_members subscription_members[]
+  subscriptions        subscriptions[]
+}
+
+enum otp_verification_type {
+  register
+  forgot
+}
+
+enum subscription_members_role {
+  parent
+  child
+}
+
+enum subscription_members_status {
+  active
+  removed
+  left
+}
+
+enum users_plan {
+  individual
+  multi
+}
+
+enum payments_status {
+  success
+  failed
+}
+
+enum subscriptions_status {
+  active
+  expired
+  cancelled
+}
+
+enum users_status {
+  free
+  subscribed
+}

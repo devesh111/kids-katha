@@ -39,3 +39,4 @@ Thumbs.db
 
 # Prisma
 prisma/migrations/
+package-lock.json

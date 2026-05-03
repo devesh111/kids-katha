@@ -1,3 +1,5 @@
+export const runtime = "nodejs";
+
 import { NextResponse } from "next/server";
 import { getCategoriesWithStoryCounts } from "@/lib/queries/categories";
 import { serializeBigInt } from "@/lib/serializers";

@@ -1,3 +1,5 @@
+"use server";
+
 const SubCategoryPage = async ({ params }) => {
     const { subcategoryId } = await params;
     return <div>Subcategory: {subcategoryId}</div>;

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Search, BookOpen, Headphones, Star } from "lucide-react";
 import BackToTop from "@/components/layout/BackToTop";
+import Header from "@/components/layout/Header";
 
 /**
  * Home page for Kids Katha
@@ -12,69 +13,48 @@ import BackToTop from "@/components/layout/BackToTop";
 export default function HomePage() {
     return (
         <main className="min-h-screen bg-linear-to-b from-slate-950 via-slate-900 to-slate-950">
-            {/* Header/Navigation */}
-            <header className="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/95 backdrop-blur">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                        <div className="w-10 h-10 rounded-full bg-linear-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                            <BookOpen className="w-6 h-6 text-white" />
-                        </div>
-                        <h1 className="text-2xl font-bold bg-linear-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
-                            Kids Katha
-                        </h1>
-                    </div>
-                    <nav className="flex items-center gap-4">
-                        <Link href="/categories">
-                            <Button
-                                variant="ghost"
-                                className="text-slate-300 hover:text-white"
-                            >
-                                Categories
-                            </Button>
-                        </Link>
-                        <Link href="/login">
-                            <Button className="bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
-                                Login
-                            </Button>
-                        </Link>
-                    </nav>
-                </div>
-            </header>
-
             {/* Hero Section */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-                <div className="text-center space-y-6">
-                    <h2 className="text-5xl sm:text-6xl font-bold text-white leading-tight">
-                        Magical Stories for{" "}
-                        <span className="bg-linear-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
-                            Every Child
-                        </span>
-                    </h2>
-                    <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-                        Explore enchanting tales in English and Hindi. From
-                        Krishna Stories to Arabian Nights, discover stories that
-                        inspire and delight.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                        <Link href="/categories">
-                            <Button
-                                size="lg"
-                                className="bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white"
-                            >
-                                <BookOpen className="w-5 h-5 mr-2" />
-                                Explore Stories
-                            </Button>
-                        </Link>
-                        <Link href="/pricing">
-                            <Button
-                                size="lg"
-                                variant="outline"
-                                className="border-slate-600 text-white hover:bg-slate-800"
-                            >
-                                <Star className="w-5 h-5 mr-2" />
-                                Premium Plans
-                            </Button>
-                        </Link>
+                <div className="flex">
+                    <div className="text-left space-y-6">
+                        <h2 className="text-5xl sm:text-6xl font-bold text-white leading-tight">
+                            Magical Stories for{" "}
+                            <span className="bg-linear-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
+                                Every Child
+                            </span>
+                        </h2>
+                        <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+                            Explore enchanting tales in English and Hindi. From
+                            Krishna Stories to Arabian Nights, discover stories
+                            that inspire and delight.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-start pt-4">
+                            <Link href="/categories">
+                                <Button
+                                    size="lg"
+                                    className="bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white"
+                                >
+                                    <BookOpen className="w-5 h-5 mr-2" />
+                                    Explore Stories
+                                </Button>
+                            </Link>
+                            <Link href="/pricing">
+                                <Button
+                                    size="lg"
+                                    variant="outline"
+                                    className="border-slate-600 text-white hover:bg-slate-800"
+                                >
+                                    <Star className="w-5 h-5 mr-2" />
+                                    Premium Plans
+                                </Button>
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="flex items-center justify-center">
+                        <img
+                            src="images/home-page-hero-img.webp"
+                            className="w-full"
+                        />
                     </div>
                 </div>
             </section>
@@ -131,89 +111,13 @@ export default function HomePage() {
                     <Link href="/categories">
                         <Button
                             size="lg"
-                            className="bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+                            className="text-white bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
                         >
                             Start Exploring
                         </Button>
                     </Link>
                 </div>
             </section>
-
-            {/* Footer */}
-            <footer className="border-t border-slate-800 bg-slate-950 mt-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                    <div className="grid md:grid-cols-4 gap-8 mb-8">
-                        <div>
-                            <h4 className="text-white font-semibold mb-4">
-                                Kids Katha
-                            </h4>
-                            <p className="text-slate-400 text-sm">
-                                Stories that inspire young minds.
-                            </p>
-                        </div>
-                        <div>
-                            <h4 className="text-white font-semibold mb-4">
-                                Quick Links
-                            </h4>
-                            <ul className="space-y-2 text-slate-400 text-sm">
-                                <li>
-                                    <Link
-                                        href="/categories"
-                                        className="hover:text-white"
-                                    >
-                                        Categories
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        href="/pricing"
-                                        className="hover:text-white"
-                                    >
-                                        Pricing
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        href="/login"
-                                        className="hover:text-white"
-                                    >
-                                        Login
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="text-white font-semibold mb-4">
-                                Legal
-                            </h4>
-                            <ul className="space-y-2 text-slate-400 text-sm">
-                                <li>
-                                    <a href="#" className="hover:text-white">
-                                        Privacy Policy
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" className="hover:text-white">
-                                        Terms of Service
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="text-white font-semibold mb-4">
-                                Contact
-                            </h4>
-                            <p className="text-slate-400 text-sm">
-                                support@kidskatha.com
-                            </p>
-                        </div>
-                    </div>
-                    <div className="border-t border-slate-800 pt-8 text-center text-slate-400 text-sm">
-                        <p>&copy; 2026 Kids Katha. All rights reserved.</p>
-                    </div>
-                </div>
-            </footer>
-            <BackToTop />
         </main>
     );
 }

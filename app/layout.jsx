@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -19,12 +21,12 @@ const geistMono = Geist_Mono({
 export const metadata = {
     title: "Kids Katha - Stories for Children",
     description:
-        "Explore magical stories in English and Hindi. Free and premium storytelling for kids.",
+        "Explore magical stories in English and Hindi. Free and premium storytelling for kids. Screen-free audio stories for curious kids",
     keywords: ["stories", "kids", "children", "audio", "hindi", "english"],
     openGraph: {
         type: "website",
         locale: "en_US",
-        url: "https://kids-katha.com",
+        url: "https://kidskatha.com",
         siteName: "Kids Katha",
         title: "Kids Katha - Stories for Children",
         description: "Explore magical stories in English and Hindi",
@@ -53,15 +55,17 @@ export default function RootLayout({ children }) {
                 <link rel="icon" href="/favicon.ico" />
             </head>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased bg-blue-950 text-white`}
+                className={`${geistSans.variable} ${geistMono.variable} antialiased text-white`}
             >
                 <ThemeProvider
                     attribute="class"
-                    defaultTheme="system"
+                    defaultTheme="dark"
                     enableSystem
                     disableTransitionOnChange
                 >
+                    <Header />
                     {children}
+                    <Footer />
                 </ThemeProvider>
             </body>
         </html>

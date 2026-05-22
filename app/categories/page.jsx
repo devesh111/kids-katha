@@ -41,10 +41,10 @@ export default function CategoriesPage() {
             {/* Main Content */}
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="mb-12">
-                    <h2 className="text-4xl font-bold text-white mb-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                         Story Categories
                     </h2>
-                    <p className="text-slate-300 text-lg">
+                    <p className="text-slate-300 text-sm md:text-lg">
                         Explore our collection of stories organized by category
                     </p>
                 </div>
@@ -68,7 +68,7 @@ export default function CategoriesPage() {
 
                 {/* Categories Grid */}
                 {!loading && !error && (
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                         {categories.map((category) => (
                             <Link
                                 key={category.id}
@@ -80,19 +80,19 @@ export default function CategoriesPage() {
                                         className="object-cover"
                                         alt={category.name}
                                     />
-                                    <div className="px-6 pb-6">
+                                    <div className="px-2 md:px-6 pb-6">
                                         <div className="flex items-start justify-between mb-4">
-                                            <div className="w-12 h-12 rounded-lg bg-linear-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                                                <BookOpen className="w-6 h-6 text-white" />
+                                            <div className="w-7 h-7 md:w-12 md:h-12 rounded-lg bg-linear-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                                                <BookOpen className="w-3 h-3 md:w-6 md:h-6 text-white" />
                                             </div>
-                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm font-medium">
+                                            <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-xs md:text-sm font-medium">
                                                 {category.story_count} stories
                                             </span>
                                         </div>
-                                        <h3 className="text-xl font-semibold text-white mb-2">
+                                        <h3 className="text-lg md:text-xl font-semibold text-white mb-2">
                                             {category.name}
                                         </h3>
-                                        <p className="text-slate-400 text-sm">
+                                        <p className="text-slate-400 text-xs md:text-sm">
                                             Explore {category.story_count}{" "}
                                             amazing stories in this category
                                         </p>

@@ -14,16 +14,16 @@ export default function HomePage() {
     return (
         <main className="min-h-screen bg-linear-to-b from-slate-950 via-slate-900 to-slate-950">
             {/* Hero Section */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-                <div className="flex">
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20">
+                <div className="flex flex-col md:flex-row gap-15 md:gap-3">
                     <div className="text-left space-y-6">
-                        <h2 className="text-5xl sm:text-6xl font-bold text-white leading-tight">
+                        <h2 className="text-4xl sm:text-6xl font-bold text-white leading-tight">
                             Magical Stories for{" "}
                             <span className="bg-linear-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
                                 Every Child
                             </span>
                         </h2>
-                        <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+                        <p className="text-sm md:text-xl text-slate-300 max-w-2xl mx-auto">
                             Explore enchanting tales in English and Hindi. From
                             Krishna Stories to Arabian Nights, discover stories
                             that inspire and delight.

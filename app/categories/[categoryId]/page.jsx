@@ -69,7 +69,7 @@ export default function CategoryPage({ params }) {
                             <img
                                 src={data.category.imageUrl}
                                 alt={data.category.name}
-                                className="object-cover object-[0px_-100px]"
+                                className="object-cover object-[0px_-25px] md:object-[0px_-100px]"
                             />
                         ) : (
                             <div className="absolute inset-0 bg-linear-to-br from-purple-900 via-pink-900 to-slate-900" />
@@ -79,7 +79,7 @@ export default function CategoryPage({ params }) {
                         {/* Content */}
                         <div className="absolute bottom-0 left-0 right-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
                             {/* Breadcrumb */}
-                            <nav className="flex items-center gap-2 text-sm text-slate-400 mb-4">
+                            <nav className="flex items-center gap-2 text-sm text-slate-100 mb-4">
                                 <Link
                                     href="/"
                                     className="hover:text-white flex items-center gap-1"
@@ -98,10 +98,10 @@ export default function CategoryPage({ params }) {
                                     {data.category.name}
                                 </span>
                             </nav>
-                            <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">
+                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-2">
                                 {data.category.name}
                             </h2>
-                            <p className="text-slate-300 text-lg">
+                            <p className="text-slate-300 text-sm md:text-lg ">
                                 {data.subcategories.length} subcategories to
                                 explore
                             </p>
@@ -109,12 +109,12 @@ export default function CategoryPage({ params }) {
                     </div>
 
                     {/* Subcategories */}
-                    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 md:py-12">
                         <div className="mb-8">
                             <h3 className="text-2xl font-bold text-white mb-1">
                                 Subcategories
                             </h3>
-                            <p className="text-slate-400">
+                            <p className="text-slate-400 text-sm md:text-base">
                                 Browse stories by subcategory
                             </p>
                         </div>
@@ -127,7 +127,7 @@ export default function CategoryPage({ params }) {
                                 </p>
                             </div>
                         ) : (
-                            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
                                 {data.subcategories.map((sub) => (
                                     <Link
                                         key={sub.id}

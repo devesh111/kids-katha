@@ -271,7 +271,7 @@ export default function StoryPage({ params }) {
                         )}
                         <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/50 to-transparent" />
                         <div className="absolute bottom-0 left-0 right-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
-                            <nav className="flex items-center gap-2 text-xs text-slate-400 mb-3 flex-wrap">
+                            <nav className="flex items-center gap-2 text-xs text-slate-100 mb-3 flex-wrap">
                                 <Link
                                     href="/"
                                     className="hover:text-white flex items-center gap-1"
@@ -304,7 +304,7 @@ export default function StoryPage({ params }) {
                                     {story.title}
                                 </span>
                             </nav>
-                            <h2 className="text-3xl md:text-5xl font-bold text-white drop-shadow-lg">
+                            <h2 className="text-2xl md:text-5xl font-bold text-white drop-shadow-lg">
                                 {story.title}
                             </h2>
                         </div>

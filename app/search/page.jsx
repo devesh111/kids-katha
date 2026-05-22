@@ -200,11 +200,11 @@ export default function SearchPage() {
                                     value={query}
                                     onChange={(e) => setQuery(e.target.value)}
                                     placeholder="Search stories, categories..."
-                                    className="w-full bg-slate-800 border border-slate-700 rounded-xl pl-12 pr-28 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 transition-colors"
+                                    className="w-full bg-slate-800 border border-slate-700 rounded-xl pl-12 pr-28 py-2 md:py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 transition-colors text-sm md:text-base"
                                 />
                                 <Button
                                     type="submit"
-                                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white"
+                                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-xs md:text-sm"
                                 >
                                     Search
                                 </Button>
@@ -385,7 +385,7 @@ export default function SearchPage() {
                             )}
 
                         {!loading && results.length > 0 && (
-                            <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-5">
+                            <div className="grid grid-cols-2 xl:grid-cols-3 gap-5">
                                 {results.map((story) => (
                                     <StoryCard key={story.id} story={story} />
                                 ))}

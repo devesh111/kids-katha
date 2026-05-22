@@ -90,7 +90,7 @@ export default function SubCategoryPage({ params }) {
                         <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/60 to-transparent" />
                         <div className="absolute bottom-0 left-0 right-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
                             {/* Breadcrumb */}
-                            <nav className="flex items-center gap-2 text-sm text-slate-400 mb-4 flex-wrap">
+                            <nav className="flex items-center gap-2 text-sm text-slate-100 mb-4 flex-wrap">
                                 <Link
                                     href="/"
                                     className="hover:text-white flex items-center gap-1"
@@ -120,10 +120,10 @@ export default function SubCategoryPage({ params }) {
                                     {data.subcategory.name}
                                 </span>
                             </nav>
-                            <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">
+                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-2">
                                 {data.subcategory.name}
                             </h2>
-                            <p className="text-slate-300 text-lg">
+                            <p className="text-slate-300 text-sm md:text-lg">
                                 {data.stories.length}{" "}
                                 {data.stories.length === 1
                                     ? "story"
@@ -134,12 +134,12 @@ export default function SubCategoryPage({ params }) {
                     </div>
 
                     {/* Stories List */}
-                    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 md:py-12">
                         <div className="mb-8">
                             <h3 className="text-2xl font-bold text-white mb-1">
                                 Stories
                             </h3>
-                            <p className="text-slate-400">
+                            <p className="text-slate-400 text-sm md:text-base">
                                 Click any story to start listening
                             </p>
                         </div>
@@ -152,7 +152,7 @@ export default function SubCategoryPage({ params }) {
                                 </p>
                             </div>
                         ) : (
-                            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
                                 {data.stories.map((story) => (
                                     <Link
                                         key={story.id}

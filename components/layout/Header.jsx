@@ -46,7 +46,7 @@ const Header = () => {
                 <div className="w-7 h-7 rounded-full bg-linear-to-br from-purple-500 to-pink-500 flex items-center justify-center shrink-0">
                     <User className="w-4 h-4 text-white" />
                 </div>
-                <span className="text-sm text-slate-300 max-w-[120px] truncate">
+                <span className="text-sm text-slate-300 max-w-30 truncate">
                     {user.name}
                 </span>
                 <ChevronDown
@@ -75,13 +75,13 @@ const Header = () => {
                     </div>
 
                     {/* Logout */}
-                    <div className="p-2">
+                    <div className="p-2 flex justify-end">
                         <button
                             onClick={() => {
                                 setDropdownOpen(false);
                                 logout();
                             }}
-                            className="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded-lg transition-colors"
+                            className="flex items-center gap-2 px-3 py-2 text-sm bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full transition-colors"
                         >
                             <LogOut className="w-4 h-4" />
                             Logout
@@ -210,7 +210,7 @@ const Header = () => {
                     <Link href="/search" onClick={closeDrawer}>
                         <Button
                             variant="ghost"
-                            className="w-full justify-start text-slate-300 hover:text-white hover:bg-slate-800 gap-2"
+                            className="w-full justify-start text-slate-300 hover:text-white hover:bg-slate-800 gap-2 mt-2"
                         >
                             <Search size={16} />
                             Search
@@ -240,7 +240,7 @@ const Header = () => {
                                             closeDrawer();
                                             logout();
                                         }}
-                                        className="w-full flex items-center gap-2 px-3 py-2.5 text-sm text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded-lg transition-colors"
+                                        className="w-full flex items-center gap-2 px-3 py-2.5 text-sm bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full transition-colors mt-5"
                                     >
                                         <LogOut className="w-4 h-4" />
                                         Logout

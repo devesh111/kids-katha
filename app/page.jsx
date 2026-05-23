@@ -18,7 +18,7 @@ export default function HomePage() {
                 <div className="flex flex-col md:flex-row gap-15 md:gap-3">
                     <div className="text-left space-y-6">
                         <h2 className="text-4xl sm:text-6xl font-bold text-white leading-tight">
-                            Magical Stories for{" "}
+                            Audio Stories for{" "}
                             <span className="bg-linear-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
                                 Every Child
                             </span>

@@ -1,23 +1,16 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { AuthProvider } from "@/context/AuthContext";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
-
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
     variable: "--font-geist-mono",
     subsets: ["latin"],
 });
 
-/**
- * Root layout for Kids Katha app
- * Provides global styling, fonts, and metadata
- */
 export const metadata = {
     title: "Kids Katha - Stories for Children",
     description:
@@ -63,9 +56,11 @@ export default function RootLayout({ children }) {
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <Header />
-                    {children}
-                    <Footer />
+                    <AuthProvider>
+                        <Header />
+                        {children}
+                        <Footer />
+                    </AuthProvider>
                 </ThemeProvider>
             </body>
         </html>

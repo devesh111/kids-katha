@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState, useCallback, useRef, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export default function SearchPage() {
+function SearchContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
 
@@ -573,5 +573,20 @@ function StoryCard({ story }) {
                 </Link>
             </div>
         </div>
+    );
+}
+
+export default function SearchPage() {
+    return (
+        <Suspense
+            fallback={
+                <div className="min-h-screen bg-linear-to-b from-slate-950 via-slate-900 to-slate-950 flex items-center justify-center">
+                    <Loader2 className="w-8 h-8 text-purple-400 animate-spin" />
+                    <span className="ml-3 text-slate-300">Loading...</span>
+                </div>
+            }
+        >
+            <SearchContent />
+        </Suspense>
     );
 }

@@ -4,14 +4,14 @@ A modern, dark-themed Next.js application for the Kids Katha storytelling platfo
 
 ## 🎨 Features
 
-- **Dark Theme**: Beautiful dark mode with purple/magenta and orange/teal accent colors
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **shadcn/ui Components**: Pre-built, accessible UI components
-- **API Routes**: Backend endpoints for categories, stories, and search
-- **JWT Authentication**: Secure token-based authentication with HTTP-only cookies
-- **Story Access Control**: Free story configuration and subscription-based entitlement gating
-- **Audio Playback**: Support for story audio files with language selection
-- **Search Functionality**: Full-text search across stories
+- **Dark Theme**: Beautiful dark mode with purple/magenta and orange/teal accent colors.
+- **Responsive Design**: Mobile-first approach with Tailwind CSS.
+- **shadcn/ui Components**: Pre-built, accessible UI components.
+- **API Routes**: Backend endpoints for categories, stories, and search.
+- **JWT Authentication**: Secure token-based authentication with HTTP-only cookies.
+- **Story Access Control**: Free story configuration and subscription-based entitlement gating.
+- **Audio Playback**: Support for story audio files with language selection.
+- **Search Functionality**: Full-text search across stories.
 
 ## 🚀 Quick Start
 

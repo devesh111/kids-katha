@@ -26,7 +26,7 @@ export default function HomePage() {
                         <p className="text-sm md:text-xl text-slate-300 max-w-2xl mx-auto">
                             Explore enchanting tales in English and Hindi. From
                             Krishna Stories to Arabian Nights, discover stories
-                            that inspire and delight.
+                            that inspire and delight. 
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-start pt-4">
                             <Link href="/categories">

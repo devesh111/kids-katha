@@ -5,7 +5,7 @@ import { Mail, MapPinHouse } from "lucide-react";
 const PrivacyPolicyPage = () => {
     return (
         <main className="min-h-screen bg-linear-to-b from-slate-950 via-slate-900 to-slate-950">
-            <div className="flex flex-col max-w-5xl items-center justify-center mx-auto my-7">
+            <div className="flex flex-col max-w-5xl items-center justify-center mx-auto my-7 px-5 lg:px-0">
                 <h1 className="text-center font-semibold text-3xl my-2">
                     Privacy Policy
                 </h1>

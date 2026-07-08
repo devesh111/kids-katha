@@ -7,11 +7,6 @@ import { Card } from "@/components/ui/card";
 import { BookOpen, Loader2 } from "lucide-react";
 import { categoryImageUrl } from "@/lib/media";
 
-/**
- * Categories page
- * Displays all story categories with story counts
- * Users can click to browse stories in each category
- */
 export default function CategoriesPage() {
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);

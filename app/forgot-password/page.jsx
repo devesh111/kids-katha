@@ -16,12 +16,6 @@ import {
 } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 
-/**
- * Forgot Password page
- * Step 1 — Enter email or phone → verify account exists
- * Step 2 — Enter new password + confirm → reset in DB
- * (OTP bypassed for now, can be added later between steps)
- */
 export default function ForgotPasswordPage() {
     const router = useRouter();
     const { user, loading } = useAuth();

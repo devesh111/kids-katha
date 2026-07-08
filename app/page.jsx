@@ -2,14 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Search, BookOpen, Headphones, Star } from "lucide-react";
-import BackToTop from "@/components/layout/BackToTop";
-import Header from "@/components/layout/Header";
 
-/**
- * Home page for Kids Katha
- * Displays featured stories, categories, and call-to-action
- * Dark theme with purple/magenta/orange/teal color scheme
- */
 export default function HomePage() {
     return (
         <main className="min-h-screen bg-linear-to-b from-slate-950 via-slate-900 to-slate-950">
@@ -36,16 +29,6 @@ export default function HomePage() {
                                 >
                                     <BookOpen className="w-5 h-5 mr-2" />
                                     Explore Stories
-                                </Button>
-                            </Link>
-                            <Link href="/pricing">
-                                <Button
-                                    size="lg"
-                                    variant="outline"
-                                    className="border-slate-600 text-white hover:bg-slate-800"
-                                >
-                                    <Star className="w-5 h-5 mr-2" />
-                                    Premium Plans
                                 </Button>
                             </Link>
                         </div>

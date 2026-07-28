@@ -26,14 +26,12 @@ export async function GET(request) {
         const q = searchParams.get("q")?.trim();
 
         const users = await prisma.users.findMany({
-            where: q
-                ? {
-                      OR: [
-                          { name: { contains: q } },
-                          { email: { contains: q } },
-                      ],
-                  }
-                : undefined,
+            where: {
+                status: "free",
+                ...(q && {
+                    OR: [{ name: { contains: q } }, { email: { contains: q } }],
+                }),
+            },
             select: SAFE_USER_SELECT,
             orderBy: { created_at: "desc" },
         });

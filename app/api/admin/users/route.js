@@ -120,6 +120,15 @@ export async function POST(request) {
                 { status: 401 },
             );
         }
+        if (error.code === "P2002") {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "A user with this email/phone already exists.",
+                },
+                { status: 409 },
+            );
+        }
         console.error("Admin create user error:", error);
         return NextResponse.json(
             { success: false, error: "Failed to create user." },

@@ -51,6 +51,15 @@ export async function GET(request, context) {
                 { status: 401 },
             );
         }
+        if (error.code === "P2002") {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "Another user already uses this email/phone.",
+                },
+                { status: 409 },
+            );
+        }
         console.error("Admin get user error:", error);
         return NextResponse.json(
             { success: false, error: "Failed to fetch user." },

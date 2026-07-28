@@ -1,8 +1,16 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
+import { usePathname } from "next/navigation";
 import BackToTop from "./BackToTop";
 
 const Footer = () => {
+    const pathname = usePathname();
+
+    // Admin dashboard doesn't use the public site footer
+    if (pathname?.startsWith("/admin")) return null;
+
     return (
         <footer className="border-t border-slate-800 bg-slate-950 mt-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

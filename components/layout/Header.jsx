@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
 import { Search, Menu, X, User, LogOut, ChevronDown } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
@@ -11,6 +12,10 @@ const Header = () => {
     const [isOpen, setIsOpen] = useState(false); // mobile drawer
     const [dropdownOpen, setDropdownOpen] = useState(false); // user dropdown
     const dropdownRef = useRef(null);
+    const pathname = usePathname();
+
+    // Admin dashboard has its own header — don't show the public one there
+    if (pathname?.startsWith("/admin")) return null;
 
     const closeDrawer = () => setIsOpen(false);
 
@@ -74,14 +79,22 @@ const Header = () => {
                         </div>
                     </div>
 
-                    {/* Logout */}
-                    <div className="p-2 flex justify-end">
+                    {/* Menu items */}
+                    <div className="p-2 flex flex-col gap-1">
+                        <Link
+                            href="/profile"
+                            onClick={() => setDropdownOpen(false)}
+                            className="flex items-center gap-2 px-3 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg transition-colors"
+                        >
+                            <User className="w-4 h-4" />
+                            My Profile
+                        </Link>
                         <button
                             onClick={() => {
                                 setDropdownOpen(false);
                                 logout();
                             }}
-                            className="flex items-center gap-2 px-3 py-2 text-sm bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full transition-colors"
+                            className="flex items-center gap-2 px-3 py-2 text-sm bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full transition-colors justify-center"
                         >
                             <LogOut className="w-4 h-4" />
                             Logout
@@ -235,12 +248,24 @@ const Header = () => {
                                             </p>
                                         </div>
                                     </div>
+                                    <Link
+                                        href="/profile"
+                                        onClick={closeDrawer}
+                                    >
+                                        <Button
+                                            variant="ghost"
+                                            className="w-full justify-start text-slate-300 hover:text-white hover:bg-slate-800 gap-2"
+                                        >
+                                            <User size={16} />
+                                            My Profile
+                                        </Button>
+                                    </Link>
                                     <button
                                         onClick={() => {
                                             closeDrawer();
                                             logout();
                                         }}
-                                        className="w-full flex items-center gap-2 px-3 py-2.5 text-sm bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full transition-colors mt-5"
+                                        className="w-full flex items-center gap-2 px-3 py-2.5 text-sm bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full transition-colors mt-2"
                                     >
                                         <LogOut className="w-4 h-4" />
                                         Logout

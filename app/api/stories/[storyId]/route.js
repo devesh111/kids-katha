@@ -2,7 +2,7 @@ export const runtime = "nodejs";
 
 import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/auth";
-import { canPlayStory } from "@/lib/entitlement";
+import { canPlayAudio } from "@/lib/entitlement";
 import { getStoryAudioFiles, getStoryById } from "@/lib/queries/stories";
 import { storyImageUrl } from "@/lib/media";
 
@@ -40,9 +40,8 @@ export async function GET(request, context) {
         // Get current user (null if not authenticated)
         const user = await getCurrentUser();
 
-        // Check if user can play this story
-        // const access = await canPlayStory(user?.id || null, id);
-        const access = { canPlay: true, reason: "free" };
+        // Only logged-in users can play audio; story details stay public
+        const access = canPlayAudio(user?.id || null);
 
         // Only fetch audio files if user has access
         const audioRows = access.canPlay ? await getStoryAudioFiles(id) : [];

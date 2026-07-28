@@ -425,15 +425,15 @@ export default function StoryPage({ params }) {
                             <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-8 text-center">
                                 <Lock className="w-12 h-12 text-slate-500 mx-auto mb-3" />
                                 <p className="text-white font-semibold text-lg mb-1">
-                                    Subscribe to Listen
+                                    Login to Listen
                                 </p>
                                 <p className="text-slate-400 mb-4 text-sm">
-                                    {story.access?.reason ||
-                                        "This story requires a subscription to play."}
+                                    Please sign in to your account to play
+                                    this story.
                                 </p>
-                                <Link href="/pricing">
+                                <Link href="/login">
                                     <Button className="bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
-                                        View Plans
+                                        Sign In
                                     </Button>
                                 </Link>
                             </div>

@@ -446,7 +446,7 @@ export default function StoryPage({ params }) {
                                 <div>
                                     <p className="text-slate-400 text-base">Not a member yet?</p>
                                     <p className="text-slate-100 mt-5 text-xl">Become a Premium Member and enjoy unlimited access to all stories.</p>
-                                    <img src="/images/payment-qr.jpeg" className="w-full lg:w-1/2 mx-auto mt-10 py-4 px-3 bg-[#0B1327] rounded-sm" />
+                                    <img src="/images/payment-qr-1.jpeg" className="w-full lg:w-1/2 mx-auto mt-10 py-4 px-3 bg-[#0B1327] rounded-sm" alt="Payment QR" />
                                     <p className="text-slate-100">Scan any UPI app</p>
                                 </div>
                             </div>

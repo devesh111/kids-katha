@@ -20,6 +20,8 @@ import {
     Tag,
     Languages,
     Lock,
+    SeparatorHorizontal,
+    Minus,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -423,19 +425,30 @@ export default function StoryPage({ params }) {
                             </div>
                         ) : (
                             <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-8 text-center">
-                                <Lock className="w-12 h-12 text-slate-500 mx-auto mb-3" />
+                                {/* <Lock className="w-12 h-12 text-slate-500 mx-auto mb-3" /> */}
                                 <p className="text-white font-semibold text-lg mb-1">
-                                    Login to Listen
+                                    🔒 Premium Story
                                 </p>
-                                <p className="text-slate-400 mb-4 text-sm">
-                                    Please sign in to your account to play
-                                    this story.
+                                <p className="text-slate-400 mb-3 text-lg">
+                                    This story is available for premium members.
                                 </p>
-                                <Link href="/login">
-                                    <Button className="bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
-                                        Sign In
-                                    </Button>
-                                </Link>
+                                <div className="flex flex-col gap-3 mx-auto items-center justify-center my-3">
+                                    <p className="text-slate-400 text-base">
+                                        Already a member?
+                                    </p>
+                                    <Link href="/login">
+                                        <Button className="bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white">
+                                            Sign In
+                                        </Button>
+                                    </Link>
+                                </div>
+                                <Minus className="mx-auto" />
+                                <div>
+                                    <p className="text-slate-400 text-base">Not a member yet?</p>
+                                    <p className="text-slate-100 mt-5 text-xl">Become a Premium Member and enjoy unlimited access to all stories.</p>
+                                    <img src="/images/payment-qr.jpeg" className="w-full lg:w-1/2 mx-auto mt-10 py-4 px-3 bg-[#0B1327] rounded-sm" />
+                                    <p className="text-slate-100">Scan any UPI app</p>
+                                </div>
                             </div>
                         )}
 

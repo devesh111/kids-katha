@@ -448,6 +448,7 @@ export default function StoryPage({ params }) {
                                     <p className="text-slate-100 mt-5 text-xl">Become a Premium Member and enjoy unlimited access to all stories.</p>
                                     <img src="/images/payment-qr-1.jpeg" className="w-full lg:w-1/2 mx-auto mt-10 py-4 px-3 bg-[#0B1327] rounded-sm" alt="Payment QR" />
                                     <p className="text-slate-100">Scan any UPI app</p>
+                                    <p className="w-full p-5 bg-[#050c1f] rounded-lg mt-5 text-[#a0c3dd]">Share the screenshot of your successful payment on <a href="mailto:info@kidskatha.com" className="text-purple-300 cursor-pointer">info@kidskatha.com</a> along with your registered phone number and get your exclusive password for login within 24 working hours.</p>
                                 </div>
                             </div>
                         )}

@@ -64,7 +64,7 @@ export default function HomePage() {
                             Rich Collection
                         </h4>
                         <p className="text-slate-300">
-                            344+ stories across 5 categories. Krishna, Ramayana,
+                            380+ stories across 5 categories. Krishna, Ramayana,
                             Panchatantra, and more.
                         </p>
                     </Card>

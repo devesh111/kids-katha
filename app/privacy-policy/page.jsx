@@ -10,30 +10,26 @@ const PrivacyPolicyPage = () => {
                     Privacy Policy
                 </h1>
                 <p className="text-left w-full my-4 tracking-wide leading-relaxed">
-                    Welcome to Kids Katha ("Platform"), owned and operated by
-                    VAxpert Business Solutions ("Company," "we," "us," or
-                    "our"). We value your privacy and are committed to
-                    protecting your personal data. This Privacy Policy outlines
-                    how we collect, use, store, share, and protect your
-                    information when you use our Platform. This Privacy Policy
-                    complies with the General Data Protection Regulation (GDPR),
-                    Digital Personal Data Protection Act, 2023 (DPDP-India),
-                    California Consumer Privacy Act (CCPA), UK GDPR, Personal
-                    Information Protection and Electronic Documents Act
-                    (PIPEDA-Canada), and other applicable global privacy laws.
+                    Welcome to Kids Katha ("Platform"), owned and operated by VAxpert Business
+                    Solutions ("Company," "we," "us," or "our"). We value your privacy and are
+                    committed to protecting your personal data. This Privacy Policy outlines how we
+                    collect, use, store, share, and protect your information when you use our
+                    Platform.
+                </p>
+                <p>
+                    This Privacy Policy complies with the General Data Protection Regulation (GDPR),
+                    Digital Personal Data Protection Act, 2023 (DPDP-India), California Consumer
+                    Privacy Act (CCPA), UK GDPR, Personal Information Protection and Electronic
+                    Documents Act (PIPEDA-Canada), and other applicable global privacy laws.
                 </p>
                 <h2 className="text-left w-full my-4 font-semibold text-lg">
                     1. DATA CONTROLLER
                 </h2>
                 <p className="text-left w-full my-2 tracking-wide leading-relaxed">
-                    <strong>1.1</strong> For users in the European Economic Area
-                    (EEA), UK, and other jurisdictions, VAxpert Business
-                    Solutions is the data controller responsible for your
-                    personal data.
+                    <strong>1.1</strong> For users in the European Economic Area (EEA), UK, and other jurisdictions, VAxpert Business Solutions is the data controller responsible for your personal data.
                 </p>
                 <p className="text-left w-full my-2 tracking-wide leading-relaxed">
-                    <strong>1.2</strong> For inquiries related to data privacy,
-                    contact us at:
+                    <strong>1.2</strong> For inquiries related to data privacy, contact us at:
                 </p>
                 <p className="text-left flex flex-col w-full my-2 tracking-wide leading-relaxed">
                     <span className="flex gap-2 items-center">
@@ -59,56 +55,42 @@ const PrivacyPolicyPage = () => {
                     <strong>2.1</strong> Information You Provide
                     <ul className="list-disc list-inside my-2">
                         <li>
-                            <strong>Account Information:</strong> Name, email
-                            address, phone number, date of birth, password.
+                            <strong>Account Information:</strong> Name, and either an email address or a phone number. An account is optional in the mobile app; listening and purchasing do not require one.
                         </li>
                         <li>
-                            <strong>Payment Information: </strong> Credit/debit
-                            card details, billing address (processed securely by
-                            third-party payment processors). Separate Privacy
-                            Policies may apply for each of our third-party
-                            service providers.
+                            <strong>Payment Information: </strong> Handled entirely by the App Store, Google Play or our payment processor. We never receive or store card details.
                         </li>
                         <li>
-                            <strong>User Preferences: </strong> Subscription
-                            choices, audiobook preferences, language settings.
+                            <strong>User Preferences: </strong> Subscription choices and language settings.
                         </li>
                         <li>
-                            <strong>Customer Support Data: </strong> Queries,
-                            complaints, or interactions with our support team.
+                            <strong>Customer Support Data: </strong> Queries, complaints, or interactions with our support team.
                         </li>
                     </ul>
                 </p>
                 <p className="text-left w-full my-2 tracking-wide leading-relaxed">
                     <strong>2.2</strong> Automatically Collected Information
+                    <p>Website only. When you visit our website we collect IP address, browser type, operating system, pages visited, and cookie data as described in section 8.</p>
+                    <p><strong>Mobile app.</strong><strong>Mobile app.</strong> The app collects only what the service needs in order to work:</p>
                     <ul className="list-disc list-inside my-2">
                         <li>
-                            <strong>Device Information:</strong> IP address,
-                            browser type, operating system.
+                            A randomly generated device identifier, used solely to allow one active device per subscription. This is not the advertising identifier and not a hardware identifier.
                         </li>
                         <li>
-                            <strong>Usage Data: </strong> Pages visited,
-                            listening history, search queries.
+                            The stories marked as favourites.
                         </li>
                         <li>
-                            <strong>Cookies and Tracking Technologies: </strong>{" "}
-                            We use cookies and similar tracking technologies for
-                            analytics and improving user experience. You have
-                            the option to accept or deny or allow limited access
-                            to Cookies when visiting our website.
+                             Subscription status and purchase records from the app store.
                         </li>
-                        <li>Location of the Device</li>
+                        <li>The chosen language.</li>
                     </ul>
+                    <p>The app collects no location data, no browsing or listening history, and no analytics of any kind.</p>
                 </p>
                 <p className="text-left w-full my-2 tracking-wide leading-relaxed">
                     <strong>2.3</strong> Third-Party Data. We may receive
                     personal data from:
                     <ul className="list-disc list-inside my-2">
                         <li>Payment service providers.</li>
-                        <li>
-                            Social media platforms (if you register via Google,
-                            Facebook, etc.).
-                        </li>
                     </ul>
                 </p>
 
@@ -119,24 +101,15 @@ const PrivacyPolicyPage = () => {
                 <p className="text-left w-full my-2 tracking-wide leading-relaxed">
                     We process your data for the following lawful purposes:
                     <ul className="list-disc list-inside my-2">
-                        <li>Legal Basis (GDPR)</li>
-                        <li>Account creation and management</li>
-                        <li>Contractual necessity</li>
-                        <li>Subscription processing and payments</li>
-                        <li>Contractual necessity</li>
-                        <li>
-                            Providing personalized audiobook recommendations
-                        </li>
-                        <li>Legitimate interest</li>
-                        <li>Marketing and promotional communications</li>
-                        <li>Consent</li>
-                        <li>Fraud prevention and security monitoring</li>
-                        <li>Legitimate interest/legal obligation</li>
-                        <li>Compliance with legal obligations</li>
-                        <li>Legal obligation</li>
-                        <li>Customer support and inquiries</li>
-                        <li>Legitimate interest</li>
+                        <li>Account creation and management (contractual necessity)</li>
+                        <li>Subscription processing and payments (contractual necessity)</li>
+                        <li> Fraud prevention and security monitoring (legitimate interest / legal obligation)</li>
+                        <li>Compliance with legal obligations (legal obligation)</li>
+                        <li>Customer support and inquiries (legitimate interest)</li>
                     </ul>
+                </p>
+                <p>
+                    We do not profile users, do not personalise content from behaviour, and do not send marketing communications to children.
                 </p>
 
                 <h2 className="text-left w-full my-4 font-semibold text-lg">
@@ -147,34 +120,13 @@ const PrivacyPolicyPage = () => {
                     You have the following rights regarding your personal data:
                     <ul className="list-disc list-inside my-2">
                         <li>Right to Access: Request a copy of your data.</li>
-                        <li>
-                            Right to Rectification: Correct inaccurate or
-                            incomplete data.
-                        </li>
-                        <li>
-                            Right to Erasure: Request deletion of your data
-                            (subject to legal limitations).
-                        </li>
-                        <li>
-                            Right to Restrict Processing: Request restricted
-                            processing under certain conditions.
-                        </li>
-                        <li>
-                            Right to Data Portability: Obtain a copy of your
-                            data in a machine-readable format.
-                        </li>
-                        <li>
-                            Right to Object: Object to processing based on
-                            legitimate interests.
-                        </li>
-                        <li>
-                            Right to Withdraw Consent: Withdraw marketing or
-                            other consent-based processing.
-                        </li>
-                        <li>
-                            Right to Lodge a Complaint: File a complaint with
-                            the data protection authority in your jurisdiction.
-                        </li>
+                        <li>Right to Rectification: Correct inaccurate or incomplete data.</li>
+                        <li>Right to Erasure: Request deletion of your data (subject to legal limitations).</li>
+                        <li>Right to Restrict Processing: Request restricted processing under certain conditions.</li>
+                        <li>Right to Data Portability: Obtain a copy of your data in a machine-readable format.</li>
+                        <li>Right to Object: Object to processing based on legitimate interests.</li>
+                        <li>Right to Withdraw Consent: Withdraw consent-based processing.</li>
+                        <li>Right to Lodge a Complaint: File a complaint with the data protection authority in your jurisdiction.</li>
                         <li>
                             For data requests, email us at{" "}
                             <a href="mailto:info@kidskatha.com">
@@ -189,12 +141,10 @@ const PrivacyPolicyPage = () => {
                 </h2>
 
                 <p className="text-left w-full my-2 tracking-wide leading-relaxed">
-                    We do not sell personal data. However, we may share data
-                    with:
+                    We do not sell personal data. However, we may share data with:
                     <ul className="list-disc list-inside my-2">
                         <li>
-                            Service Providers: Payment processors, hosting
-                            providers, customer support services.
+                            Service Providers: Payment processors, hosting providers, customer support services.
                         </li>
                         <li>
                             Legal Authorities: If required by law, regulatory
@@ -205,10 +155,7 @@ const PrivacyPolicyPage = () => {
                             acquisition, or asset sale.
                         </li>
                         <li>
-                            Marketing Partners: Ordinarily Not shared with any
-                            third-party marketing companies. In the future if
-                            the same changes, you will be notified of the same
-                            and only with your consent.
+                            Advertising and marketing companies: never. We do not share data with ad networks, marketing companies or data brokers.
                         </li>
                     </ul>
                 </p>
@@ -218,16 +165,13 @@ const PrivacyPolicyPage = () => {
                 </h2>
 
                 <p className="text-left w-full my-2 tracking-wide leading-relaxed">
-                    We store and process data primarily in India. If data is
-                    transferred outside India/EEA, we ensure:
+                    App data is stored on Google Cloud servers in the United States. Website data is processed in India. Where data is transferred across borders we ensure:
                     <ul className="list-disc list-inside my-2">
                         <li>
-                            Adequate safeguards (Standard Contractual Clauses
-                            under GDPR).
+                            Adequate safeguards (Standard Contractual Clauses under GDPR).
                         </li>
                         <li>
-                            Compliance with DPDP requirements for cross-border
-                            data transfers.
+                            Compliance with DPDP requirements for cross-border data transfers.
                         </li>
                         <li>Secure mechanisms as per CCPA and PIPEDA.</li>
                     </ul>
@@ -265,28 +209,21 @@ const PrivacyPolicyPage = () => {
                 <h2 className="text-left w-full my-4 font-semibold text-lg">
                     8. COOKIES AND TRACKING TECHNOLOGIES
                 </h2>
+                <p>This section applies to our website only. The mobile app uses no cookies and no tracking technologies.</p>
 
                 <p className="text-left w-full my-2 tracking-wide leading-relaxed">
                     <ul className="list-disc list-inside my-2">
                         <li>
-                            We use cookies to enhance user experience and
-                            analytics.
+                            We use cookies on our website to enhance user experience and analytics.
                         </li>
                         <li>
-                            Essential Cookies: Required for platform
-                            functionality.
+                            Essential Cookies: Required for website functionality..
                         </li>
                         <li>
-                            Analytics Cookies: Track usage patterns (Google
-                            Analytics, etc.).
+                            Analytics Cookies: Track usage patterns on the website.
                         </li>
                         <li>
-                            Marketing Cookies: For personalized ads (only with
-                            consent).
-                        </li>
-                        <li>
-                            Users can manage cookie preferences via their
-                            browser settings.
+                            Users can manage cookie preferences via their browser settings.
                         </li>
                     </ul>
                 </p>
@@ -298,28 +235,17 @@ const PrivacyPolicyPage = () => {
                 <p className="text-left w-full my-2 tracking-wide leading-relaxed">
                     <ul className="list-disc list-inside my-2">
                         <li>
-                            As described above, you can always choose not to
-                            provide certain information, but then you might not
-                            be able to access the full range of features of our
-                            Platform.
+                            You can always choose not to provide certain information, but then you might not be able to access the full range of features of our Platform.
                         </li>
                         <li>
                             You can alter certain information provided by you.
                         </li>
                         <li>
-                            You can delete your account. However, for complying
-                            with legal purposes, we will be retaining your data
-                            for a maximum period of 7 years, subject to
-                            territorial legislations.
+                            You can delete your account at any time from within the app, at My Space - Delete account. For legal compliance, transaction records are retained for up to 7 years, subject to territorial legislation.
                         </li>
                         <li>
                             {" "}
-                            If you do not wish to receive promotional emails,
-                            you can always unsubscribe from our newsletters and
-                            also change this from your account settings. If you
-                            are still not able to change this, you may contact
-                            the Grievance Officer’s details given at the end of
-                            this document.
+                            If you do not wish to receive promotional emails you can unsubscribe from our newsletters and change this from your account settings. If you are unable to change it, contact the Grievance Officer whose details are given at the end of this document.
                         </li>
                     </ul>
                 </p>
@@ -329,10 +255,7 @@ const PrivacyPolicyPage = () => {
                 </h2>
 
                 <p className="text-left w-full my-2 tracking-wide leading-relaxed">
-                    We retain user data for as long as necessary for the
-                    purposes stated in this policy. If an account is deleted,
-                    data is removed except where required by law. Transaction
-                    records may be retained for 7 years (legal compliance).
+                    We retain user data for as long as necessary for the purposes stated in this policy. If an account is deleted, data is removed except where retention is required by law. Transaction records may be retained for 7 years (legal compliance).
                 </p>
 
                 <h2 className="text-left w-full my-4 font-semibold text-lg">
@@ -340,10 +263,7 @@ const PrivacyPolicyPage = () => {
                 </h2>
 
                 <p className="text-left w-full my-2 tracking-wide leading-relaxed">
-                    The Platform may contain links to third-party websites. We
-                    are not responsible for their privacy practices. Users
-                    should review third-party privacy policies before engaging
-                    with such sites.
+                    Our website may contain links to third-party websites. We are not responsible for their privacy practices. Users should review third-party privacy policies before engaging with such sites. The mobile app contains no third-party links.
                 </p>
 
                 <h2 className="text-left w-full my-4 font-semibold text-lg">
@@ -351,13 +271,13 @@ const PrivacyPolicyPage = () => {
                 </h2>
 
                 <p className="text-left w-full my-2 tracking-wide leading-relaxed">
-                    Our Platform is not intended for children under 18 without
-                    parental consent. If we discover data collected from a minor
-                    without verification, we will delete it immediately. Minors
-                    who access our platform are expected to use it under
-                    parental guidance. Any information of minors provided by the
-                    parents/guardians on our Platform shall be with their own
-                    consent and risk.
+                    The Kids Katha mobile app is made for children and is listed in the Apple App Store Kids Category. It contains no advertising, no third-party analytics, and no tracking of any kind. We do not build profiles of children, do not personalise content using behavioural data, and do not send marketing communications to children.
+                </p>
+                <p>
+                    Within the app we collect only what the service needs in order to work: an account, which is optional and only created if the user chooses to; the stories marked as favourites; subscription status; a randomly generated device identifier used solely to allow one active device per subscription; and the chosen language. Purchases are handled by the App Store or Google Play, and we never see payment details.
+                </p>
+                <p>
+                    An account and all of its data can be deleted at any time from within the app, at My Space - Delete account.  Our website is intended for adults. Where a parent or guardian provides information on behalf of a child, that is done with their own consent.
                 </p>
 
                 <h2 className="text-left w-full my-4 font-semibold text-lg">
@@ -365,9 +285,7 @@ const PrivacyPolicyPage = () => {
                 </h2>
 
                 <p className="text-left w-full my-2 tracking-wide leading-relaxed">
-                    We may update this policy periodically. Users will be
-                    notified of significant changes via email or platform
-                    notifications.
+                    We may update this policy periodically. Users will be notified of significant changes via email or platform notifications.
                 </p>
 
                 <h2 className="text-left w-full my-4 font-semibold text-lg">
@@ -375,7 +293,7 @@ const PrivacyPolicyPage = () => {
                 </h2>
 
                 <p className="text-left w-full my-2 tracking-wide leading-relaxed flex flex-col">
-                    For any privacy-related inquiries, please contact us at:
+                    <span>Grievance Officer: Prachi Saxena</span>
                     <span className="flex gap-2 items-center">
                         <Mail className="size-4" /> Email:{" "}
                         <a href="mailto:info@kidskatha.com">

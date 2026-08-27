@@ -29,6 +29,7 @@ export async function GET(request) {
 
         const conditions = [];
         const params = [];
+        conditions.push(`c.id <> 10`);
 
         if (query && query.length >= 2) {
             conditions.push(
@@ -90,6 +91,11 @@ export async function GET(request) {
         let filters = null;
         if (offset === 0) {
             const categories = await prisma.categories.findMany({
+                where: {
+                    id: {
+                        not: 10,
+                    },
+                },
                 orderBy: [{ sort_order: "asc" }, { name: "asc" }],
                 select: { id: true, name: true },
             });
